@@ -5,7 +5,7 @@
     background-color: #b9e4f9;
 }
 
-.mutebutton{
+mutebutton{
     cursor: pointer;
 }
 
@@ -16,28 +16,12 @@ body{
 
 svg{
     display: none;
-    /*position: absolute;*/
     background-color: #b9e4f9;
     top: 0;
     left: 0;
     width: 800px;
     height: 500px;
-   /* transition-delay: transform 2s;
-    transition: transform 2s;
-    transform: scale(2);*/
 }
-
-/*
-@keyframes scale {
-    from {transform: scale(1);}
-    to {transform: scale(1);}
-}
-
-.scaleMap{
-    transition-timing-function: ease-in-out;
-    animation-name: scale;
-    animation-duration: 2s;
-}*/
 
 .worldMap{
     overflow: hidden;

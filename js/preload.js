@@ -4,10 +4,15 @@
 
 "use strict";
 
+/******** VARIABLES ********/
+
 var stage, queue, preloadText, islandTree, islandMushroom, mutebutton, map;
-var currentLevel = 4, levelData, backgrounds = [], islands=[], forhindringer =[], vand = [], farligtVand =[], countryElements = [],
+var currentLevel = 0, levelData, backgrounds = [], islands=[], forhindringer =[], vand = [], farligtVand =[], countryElements = [],
     islandFeet=[], islandTreeFeet, islandMushroomFeet, goalPosition, forhindringsfart;
 var islandWidth = 270, islandHeight = 345, birdie, remainingTime, countDownTimerStartet = false, gameSatUp = false;
+
+
+/******** ONLY RUN WHEN YOU INITIALLY LOAD THE GAME *********/
 
 window.addEventListener("load", preload);
 
@@ -38,7 +43,8 @@ function preload(){
             {"id": "audioGO1", "src": "audio/gameover1.wav"},
             {"id": "audioGO2", "src": "audio/gameover2.wav"},
             {"id": "audioHome", "src": "audio/home.ogg"},
-            {"id": "mutebutton", "src": "img/mute.png"},
+            {"id": "muteIcon", "src": "img/muteIcon.png"},
+            {"id": "speakerIcon", "src": "img/speakerIcon.png"},
             {"id": "map", "src": "img/worldLow.svg"},
             {"id": "keyControls", "src": "img/keys.png"}
         ]
@@ -49,7 +55,6 @@ function progress(e){
     var percent = Math.round(e.progress*100);
     preloadText.text = "Loading: " + percent + "%";
     stage.update(e);
-    console.log(percent);
 }
 
 function startGame(e) {
@@ -59,11 +64,11 @@ function startGame(e) {
     stage.update(e);
 }
 
+
+/********** NAVIGATE FROM LEVEL TO LEVEL **********/
+
 function loadMap(e){
-    console.log("map is loading");
     stage.removeChild(keyControls, controlText);
-     
-    setTimeout(scalemap, 500);
     
     for(var i = 0; i < currentLevel+1 ; i++){
         roadThroughEurope[i].style.fill = "#5bbd8f";
@@ -77,6 +82,8 @@ function loadMap(e){
             }
         });
     }
+
+    setTimeout(scalemap, 500);
 }
 
 function scalemap(){
@@ -128,10 +135,14 @@ function clearLevel(){
     loadMap();
 }
 
+
+/********* CREATE THE ELEMENTS OF THE GAME **********/
+
 function addMutebutton () {
-    mutebutton = new createjs.Bitmap(queue.getResult("mutebutton"));
+    mutebutton = new createjs.Bitmap(queue.getResult("speakerIcon"));
     mutebutton.x = stage.canvas.width - 32;
     mutebutton.class = "mutebutton";
+    mutebutton.style.cursor = "pointer";
     stage.addChild(mutebutton);
 
     mutebutton.addEventListener("click", function(){
@@ -183,11 +194,9 @@ function getPlatforms() {
             p.width = islandWidth;
             p.height = islandHeight/2;
             p.id = plat.id;
-            console.log(islandHeight);
 
             islands.push(p);
             backgrounds.push(p);
-            console.log(backgrounds);
 
             stage.addChild(p);
 
@@ -219,11 +228,9 @@ function getplatformFeet() {
             f.width = islandWidth;
             f.height = islandHeight/2;
             f.id = feet.id;
-            console.log(islandHeight);
 
             islandFeet.push(f);
             backgrounds.push(f);
-            console.log(backgrounds);
 
             stage.addChild(f);
         }
@@ -241,7 +248,6 @@ function getCountryElement() {
     for (var i=0; i < countryelement.length; i++){
         var countrye = countryelement[i];
 
-        console.log("vi add'er countryE");
         var ce = new createjs.Sprite(countryElementSheet, countrye.sprite);
         var ratioce = countrye.scaleX;
 
@@ -323,19 +329,6 @@ function getDeadlyWater() {
         farligtVand.push(dw);
         stage.addChild(dw);
     }
-}
-
-
-//IS THIS EVER USED
-
-function getMap(){
-    map = new createjs.Bitmap(queue.getResult('map'));
-    map.x=0;
-    map.y=0;
-    map.width = 800;
-    map.height =800;
-    stage.addChild(map);
-    console.log("map is loaded")
 }
 
  
