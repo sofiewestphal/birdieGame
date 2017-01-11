@@ -4,7 +4,9 @@
 
 "use strict";
 
-var youAreGameover = false, speed = 4, birdieAltitude, birdieIsHome = false, birdieStille = false, birdieSkills, birdieFriends =[], birdieFriend;
+
+/******** VARIABELS ********/
+var youAreGameover = false, pointIncrease, speed = 4, birdieAltitude, birdieIsHome = false, birdieStille = false, birdieSkills, birdieFriends =[], birdieFriend;
 var pointText, pointScore = 0, countDown, pointsGainedText, currentlyInGame = false;
 var denmark = document.getElementById("DK"), germany = document.getElementById("DE"), france = document.getElementById("FR"),
     spain = document.getElementById("ES"), morocco = document.getElementById("MA");
@@ -134,6 +136,7 @@ birdieSkills = {
                     stage.removeChild(this);
                 }
             );
+        pointIncrease = -10;
         showPointsGained(-10);
     },
 
@@ -152,9 +155,20 @@ birdieSkills = {
                     stage.removeChild(this);
                 }
             );
+        pointIncrease = -10;
         showPointsGained(-10);
     }
 }
+
+function isBirdiecurrentlyInGame(){
+    if (canvas.style.display == "block"){
+        currentlyInGame=true;
+    }else{
+        currentlyInGame=false;
+    }
+}
+
+/*********** HITTESTS ***********/
 
 function hitTest(rect1,rect2) {
     if ( rect1.x >= rect2.x + rect2.width
@@ -167,67 +181,72 @@ function hitTest(rect1,rect2) {
     return true;
 }
 
-function isBirdiecurrentlyInGame(){
-    if (canvas.style.display == "block"){
-        currentlyInGame=true;
-    }else{
-        currentlyInGame=true; //SKAL BEGGE VÆRE TRUE?
-    }
-}
-
-/*********** HITTESTS ***********/
-
 function checkIfBirdiereachGoal() {
     if(hitTest(birdie, islandMushroomFeet) && !youAreGameover){
         createjs.Sound.play("audioHome");
         birdie.direction = "sitting";
-        birdie.gotoAndStop('sitting');
+        birdie.gotoAndPlay('downRight');
         birdieIsHome = true;
-        console.log("Birdie is home");
+        pointIncrease = remainingTime
         showPointsGained(remainingTime);
 
         if (currentLevel !== levelData.levels.length-1){
             currentLevel++;
             setTimeout(clearLevel, 2000);
         }else{
-            var youMadeItText = new createjs.Text(
-                "You reached Morroc",
-                "20px Montserrat",
-                "#bd5b5b");
-            youMadeItText.lineWidth = 300;
-            youMadeItText.textAlign = "center";
-            youMadeItText.textBaseline = "middle";
-            youMadeItText.x = 400;
-            youMadeItText.y = 250;
+            var birdieFriendPosition = birdie.x + birdie.width;
+           var birdiesheet = new createjs.SpriteSheet(queue.getResult('birdsheet'));
 
-            stage.addChild(youMadeItText);
+            birdieFriend = new createjs.Sprite(birdiesheet, "left");
 
-            var birdiesheet = new createjs.SpriteSheet(queue.getResult('birdsheet'));
+            birdieFriend.direction = "left";
+            birdieFriend.gotoAndPlay('left');
 
-                birdieFriend = new createjs.Sprite(birdiesheet, "left");
+            birdieFriend.x = 1000 + ( 30);
+            birdieFriend.y = 300 - (30);
 
-                birdieFriend.direction = "left";
-                birdieFriend.gotoAndPlay('left');
+            birdieFriends.push(birdieFriend);
+            stage.addChild(birdieFriend);
 
-                birdieFriend.x = 1000 + ( 30);
-                birdieFriend.y = 300 - (30);
-
-                birdieFriends.push(birdieFriend);
-                stage.addChild(birdieFriend);
-
-                createjs.Tween.get(birdieFriend).to(
-                    {
-                        x:600, y:366
-                    },
-                    2000,
-                    createjs.Ease.easeInQuart
+            createjs.Tween.get(birdieFriend)
+                .to(
+                { x:birdieFriendPosition, y:366 }, 2000, createjs.Ease.easeInQuart
                 )
-                    .call(
-                        function (e){
-                            birdieFriend.gotoAndPlay("downLeft");
-                        }
-                    );
+                .call(
+                    function (e){
+                        birdieFriend.gotoAndPlay("downLeft");
+                        celebrationText();
+                    }
+                );
         }
+    }
+}
+
+function celebrationText(){
+    var youMadeItText = new createjs.Text(
+        "You made it to the South! On the way you collected " + pointScore + " points.",
+        "20px Montserrat",
+        "#FFF");
+    youMadeItText.lineWidth = 300;
+    youMadeItText.textAlign = "center";
+    youMadeItText.textBaseline = "middle";
+    youMadeItText.x = 400;
+    youMadeItText.y = 250;
+
+    stage.addChild(youMadeItText);
+
+    if(pointScore < 0){
+        var lowScoreText = new createjs.Text(
+            "... That's really bad.",
+            "16px Montserrat",
+            "#FFF");
+        lowScoreText.lineWidth = 300;
+        lowScoreText.textAlign = "center";
+        lowScoreText.textBaseline = "middle";
+        lowScoreText.x = 400;
+        lowScoreText.y = 350;
+
+        stage.addChild(lowScoreText);
     }
 }
 
@@ -238,7 +257,7 @@ function checkForGameover() {
             createjs.Sound.play("audioGO2");
 
             var gameoverText = new createjs.Text(
-                "OH NO! YOU HIT THE SCARECROW",
+                "Birdie got scared. He went back a level",
                 "20px Montserrat",
                 "#bd5b5b");
             gameoverText.lineWidth = 300;
@@ -262,7 +281,7 @@ function checkForGameover() {
             birdie.gotoAndStop("drowning");
 
             var gameoverTextDrowning = new createjs.Text(
-                "OH NO! YOU DROWNED BIRDIE",
+                "... You drowned Birdie.",
                 "20px Montserrat",
                 "#bd5b5b");
             gameoverTextDrowning.lineWidth = 300;
@@ -284,7 +303,7 @@ function checkForGameover() {
         createjs.Sound.play("audioGO1");
 
         var gameoverTextDrowning = new createjs.Text(
-            "Time's up, you need to hurry a bit more next time",
+            "You need to hurry a bit more next time.",
             "20px Montserrat",
             "#bd5b5b");
         gameoverTextDrowning.lineWidth = 300;
@@ -302,7 +321,6 @@ function checkForGameover() {
 
 /********** MOVE THE ELEMENTS OF THE GAME ***********/
 
-//MAKE THIS INTO AN OBJECT THAT YOU CAN ASSIGN TO ANY OBJECT?
 function moveObstacles() {
     for (var i = 0; i <= forhindringer.length-1; i++){
         forhindringer[i].x -= forhindringsfart;
@@ -393,6 +411,10 @@ function showPointsGained(pointIncrease) {
     pointsGainedText.x = 400;
     pointsGainedText.y = 150;
 
+    if (pointIncrease < 0){
+        pointsGainedText.text = "Points " + pointIncrease;
+    }
+
     stage.addChild(pointsGainedText);
 
     setTimeout(movePointsGainedText,500);
@@ -401,11 +423,11 @@ function showPointsGained(pointIncrease) {
 function movePointsGainedText() {
     createjs.Tween.get(pointsGainedText)
         .to({x:400, y:-100},500, createjs.Ease.easeInQuart);
-    updatePoint(remainingTime);
+    updatePoint(pointIncrease);
 }
 
 function updatePoint(pointIncrease) {
-    pointScore+=pointIncrease;
+    pointScore += pointIncrease;
     pointText.text = "Points: " + pointScore;
 
     createjs.Tween.get(pointText)
