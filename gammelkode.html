@@ -1,0 +1,53 @@
+/*
+function moveBirdie(){
+     birdieAltitude = birdie.y;
+
+    if(key.space && (birdie.y - speed) >= 0){
+        birdie.y -= speed;
+    }
+
+    if(birdie.direction === "right" && (birdie.x + speed) < (stage.canvas.width - GRIDSIZE) && !birdieStille){
+        birdie.x += speed;
+        if(birdieAltitude <= (stage.canvas.height - GRIDSIZE)){
+            birdie.y += (birdieAltitude/100);
+        }
+        if(birdie.currentAnimation !== "right"){
+            birdie.gotoAndPlay('right');
+        }
+    }else if (birdie.direction === "left" && (birdie.x - speed) >= 0 && !birdieStille){
+        birdie.x -= speed;
+        if(birdieAltitude <= (stage.canvas.height - GRIDSIZE)){
+            birdie.y += (birdieAltitude/100);
+        }
+        if(birdie.currentAnimation !== "left"){
+            birdie.gotoAndPlay('left');
+        }
+    }else if(birdie.direction === "up" && (birdie.y - speed) >= 0){
+        birdie.y -= speed;
+        if(birdie.currentAnimation !== "up"){
+            birdie.gotoAndPlay('up');
+        }
+    }else if(birdie.direction === "down" && (birdie.y + speed) < stage.canvas.height - GRIDSIZE){
+        birdie.y += speed;
+        if(birdie.currentAnimation !== "up"){
+            birdie.gotoAndPlay('up');
+        }
+    }
+}
+
+function updateBirdieDirection() {
+
+    if (key.right && (birdie.x + speed) < stage.canvas.width - GRIDSIZE) {
+        birdie.direction = "right";
+    }
+    if (key.left && (birdie.x - speed) >= 0) {
+        birdie.direction = "left";
+    }
+    if (key.up && (birdie.y - speed) >= 0) {
+        birdie.direction = "up";
+    }
+    if (key.down && (birdie.y + speed) < stage.canvas.height - GRIDSIZE) {
+        birdie.direction = "down";
+    }
+}
+*/

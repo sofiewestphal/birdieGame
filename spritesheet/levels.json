@@ -1,0 +1,513 @@
+{
+  "levels":[
+    {
+      "birdie":{
+        "x": 20,
+        "y": 450,
+        "sprite": "downRight"
+      },
+      "time":{
+        "time":15
+      },
+      "platforms":[
+        {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTree",
+          "repeat": 1,
+          "id": "islandTree"
+        },
+        {
+          "x": 530,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroom",
+          "repeat": 1,
+          "id": "islandMushroom"
+        }
+      ],
+      "obstacles":[],
+      "water":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        }
+      ],
+      "deadlyWater":[],
+      "platformfeet": [
+        {
+          "x": 46,
+        "y": 0,
+        "scaleX": 0.5,
+        "scaleY": 0.5,
+        "sprite":"islandTreeFeet",
+        "repeat": 1,
+        "id": "islandTreeFeet"
+        },
+        {
+          "x": 576,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroomFeet",
+          "repeat": 1,
+          "id": "islandMushroomFeet"
+        }
+      ],
+      "countryelement":[
+          {
+          "x": 650,
+          "y": 366,
+          "scaleX": 0.3,
+          "scaleY": 0.3,
+          "sprite":"denmark"
+          }
+      ]
+    
+    },
+
+    {
+      "birdie":{
+        "x": 20,
+        "y": 450,
+        "sprite": "downRight"
+      },
+      "time":{
+        "time":15
+      },
+      "platforms":[
+        {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTree",
+          "repeat": 1,
+          "id": "islandTree"
+        },
+        {
+          "x": 530,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroom",
+          "repeat": 1,
+          "id": "islandMushroom"
+        }
+      ],
+      "obstacles":[],
+      "water":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        }
+      ],
+      "deadlyWater":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        }
+      ],
+      "platformfeet": [
+        {
+          "x": 45,
+          "y": 0,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "sprite":"islandTreeFeet",
+          "repeat": 1,
+          "id": "islandTreeFeet"
+        },
+        {
+          "x": 575,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroomFeet",
+          "repeat": 1,
+          "id": "islandMushroomFeet"
+        }
+      ],
+        "countryelement": [
+        {
+          "x": 120,
+          "y": 366,
+          "scaleX": 0.3,
+          "scaleY": 0.3,
+          "sprite":"denmark"
+        },
+        {
+          "x": 600,
+          "y": 300,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "sprite":"germany"
+      }
+    ]
+    },
+
+    {
+      "birdie":{
+        "x": 20,
+        "y": 450,
+        "sprite": "downRight"
+      },
+      "time":{
+        "time":15
+      },
+      "platforms":[
+        {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTree",
+          "repeat": 1,
+          "id": "islandTree"
+        },
+        {
+          "x": 750,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroom",
+          "repeat": 1,
+          "id": "islandMushroom"
+        }
+      ],
+      "obstacles":[
+        {
+          "x": 350,
+          "y": 470,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "rotation": 0,
+          "speed": 0,
+          "image": "img/scarecrow.png",
+          "repeat": 1,
+          "id": "scarecrow"
+        }
+      ],
+      "water":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        }
+      ],
+      "deadlyWater":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        }
+      ],
+      "platformfeet": [
+        {
+          "x": 45,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTreeFeet",
+          "repeat": 1,
+          "id": "islandTreeFeet"
+        },
+        {
+          "x": 795,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroomFeet",
+          "repeat": 1,
+          "id": "islandMushroomFeet"
+        }
+      ],
+    "countryelement": [
+        {
+          "x": 70,
+          "y": 300,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "sprite":"germany"
+        },
+        {
+          "x": 890,
+          "y": 333,
+          "scaleX": 0.4,
+          "scaleY": 0.4,
+          "sprite":"france"
+        }
+    ]
+    },
+
+    {
+      "birdie":{
+        "x": 20,
+        "y": 450,
+        "sprite": "downRight"
+      },
+      "time":{
+        "time":15
+      },
+      "platforms":[
+        {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTree",
+          "repeat": 1,
+          "id": "islandTree"
+        },
+        {
+          "x": 950,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroom",
+          "repeat": 1,
+          "id": "islandMushroom"
+        }
+      ],
+      "obstacles":[
+        {
+          "x": 850,
+          "y": 470,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "rotation": 0,
+          "speed": 3,
+          "image": "img/scarecrow.png",
+          "repeat": 1,
+          "id": "scarecrow"
+        }
+      ],
+      "water":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        }
+      ],
+      "deadlyWater":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        }
+      ],
+      "platformfeet": [
+        {
+          "x": 45,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTreeFeet",
+          "repeat": 1,
+          "id": "islandTreeFeet"
+        },
+        {
+          "x": 995,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroomFeet",
+          "repeat": 1,
+          "id": "islandMushroomFeet"
+        }
+      ],
+    "countryelement": [
+        {
+          "x": 140,
+          "y": 333,
+          "scaleX": 0.4,
+          "scaleY": 0.4,
+          "sprite":"france"
+        },
+        {
+          "x": 1070,
+          "y": 333,
+          "scaleX": 0.4,
+          "scaleY": 0.4,
+          "sprite":"spain"
+        }
+    ]    
+    },
+
+    {
+      "birdie":{
+        "x": 20,
+        "y": 450,
+        "sprite": "downRight"
+      },
+      "time":{
+        "time":15
+      },
+      "platforms":[
+        {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTree",
+          "repeat": 1,
+          "id": "islandTree"
+        },
+        {
+          "x": 950,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroom",
+          "repeat": 1,
+          "id": "islandMushroom"
+        }
+      ],
+      "obstacles":[
+        {
+          "x": 850,
+          "y": 470,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "rotation": 0,
+          "speed": 3,
+          "image": "img/scarecrow.png",
+          "repeat": 1,
+          "id": "scarecrow"
+        },
+
+        {
+          "x": 1250,
+          "y": 270,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "rotation": 0,
+          "speed": 3,
+          "image": "img/scarecrow.png",
+          "repeat": 1,
+          "id": "scarecrow"
+        }
+      ],
+      "water":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water1.png"
+        }
+      ],
+      "deadlyWater":[
+        {
+          "x":0,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        },
+        {
+          "x":800,
+          "y":350,
+          "scaleX": 1,
+          "image": "img/water2.png"
+        }
+      ],
+      "platformfeet": [
+        {
+          "x": 45,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandTreeFeet",
+          "repeat": 1,
+          "id": "islandTreeFeet"
+        },
+        {
+          "x": 995,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sprite":"islandMushroomFeet",
+          "repeat": 1,
+          "id": "islandMushroomFeet"
+        }
+      ],
+    "countryelement": [
+        {
+          "x": 120,
+          "y": 333,
+          "scaleX": 0.4,
+          "scaleY": 0.4,
+          "sprite":"spain"
+      },
+        {
+          "x": 1070,
+          "y": 333,
+          "scaleX": 0.4,
+          "scaleY": 0.4,
+          "sprite":"morroc"
+      }
+    ]
+        
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "framerate": 8,
+  "images": ["spritesheet/islands_square.png"],
+  "frames": {"width":179, "height":60, "regX":0, "regY":0},
+  "animations": {
+    "islandTreeFeet": [0],
+    "islandMushroomFeet":[1]
+  }
+}

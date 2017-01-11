@@ -1,0 +1,15 @@
+{
+  "framerate": 8,
+  "images": ["spritesheet/birdsheet.png"],
+  "frames": {"width":64, "height":64, "regX":0, "regY":0},
+  "animations": {
+    "left": [0,3],
+    "right":[4,7],
+    "downLeft": [8,9],
+    "downRight": [10,11],
+    "up":[12,15],
+    "sitting":[16],
+    "drowning":[17],
+    "scared":[20,23]
+  }
+}

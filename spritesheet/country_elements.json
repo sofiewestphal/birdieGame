@@ -1,0 +1,12 @@
+{
+  "framerate": 8,
+  "images": ["spritesheet/country_elements.png"],
+  "frames": {"width":300, "height":332, "regX":0, "regY":0},
+  "animations": {
+    "denmark": [0],
+    "germany":[1],
+    "france": [2],
+    "spain": [3],
+    "morroc":[4]
+  }
+}

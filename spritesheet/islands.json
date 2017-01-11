@@ -1,0 +1,9 @@
+{
+  "framerate": 8,
+  "images": ["spritesheet/islandSheet.png"],
+  "frames": {"width":270, "height":345, "regX":0, "regY":0},
+  "animations": {
+    "islandTree": [0],
+    "islandMushroom":[1]
+  }
+}
